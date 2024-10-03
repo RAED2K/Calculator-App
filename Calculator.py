@@ -34,3 +34,5 @@ if __name__ == "__main__":
     calculator = Calculator()
     calculator.show()
     sys.exit(app.exec())
+
+    
