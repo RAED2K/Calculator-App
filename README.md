@@ -1,2 +1,2 @@
 # Calculator-App
-Simple calculator app using python with PyQt6
+Simple calculator app with python using PyQt6
