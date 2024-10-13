@@ -4,6 +4,7 @@ import math
 from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QGridLayout,
                              QPushButton, QMainWindow, QLineEdit )
 from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QIcon
 
 
 class Calculator(QMainWindow):
@@ -26,6 +27,9 @@ class Calculator(QMainWindow):
         main_layout.addWidget(self.result_display)
         grid = QGridLayout()
         main_layout.addLayout(grid)
+        self.setFixedSize(460, 600)
+        self.setMaximumSize(460, 600)
+        self.setWindowIcon(QIcon("calculator.ico"))
 
         grid.setSpacing(10)
         main_layout.setContentsMargins(10, 10, 10, 10)
@@ -204,6 +208,7 @@ class Calculator(QMainWindow):
                 else:
                     raise ValueError("Invalid '1 / x' expression.")
 
+            expression = expression.replace('[', '(').replace(']', ')')
             expression = expression.replace('×', '*').replace('÷', '/').replace('^', '**')
             expression = expression.replace('ln', 'math.log')
             expression = expression.replace('lg', 'math.log10')
